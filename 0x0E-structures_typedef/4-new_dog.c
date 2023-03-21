@@ -2,7 +2,7 @@
 #include "dog.h"
 
 int _strlen(char *s);
-char *_strcpy(char *dest, cgar *src);
+char *_strcpy(char *dest, char *src);
 
 /**
  * new_dog - ...
@@ -14,10 +14,10 @@ char *_strcpy(char *dest, cgar *src);
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dot_t *max_dog;
+	dog_t *max_dog;
 	int name_l = 0, own_l = 0;
 
-	if (max_dog != NULL && owner != NULL)
+	if (name != NULL && owner != NULL)
 	{
 		name_l = _strlen(name) + 1;
 		own_l = _strlen(owner) + 1;
@@ -34,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 
-		max_dog-> = malloc(sizeof(char) * own_l);
+		max_dog->owner = malloc(sizeof(char) * own_l);
 
 		if (max_dog->owner == NULL)
 		{
@@ -67,4 +67,25 @@ int _strlen(char *s)
 	}
 
 	return (c);
+}
+
+/**
+ * _strcpy - Copy a string
+ * @dest: Destination value
+ * @src: Source value
+ *
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i++] = '\0';
+
+	return (dest);
 }
