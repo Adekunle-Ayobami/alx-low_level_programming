@@ -7,6 +7,7 @@
  *
  * Return: ...
  */
+
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i = 0;
@@ -19,7 +20,6 @@ int int_index(int *array, int size, int (*cmp)(int))
 			{
 				if  (cmp(array[i]))
 					return (i);
-
 				i++;
 			}
 		}
