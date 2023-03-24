@@ -5,7 +5,7 @@
 /**
  * print_strings - Prints strings, followed by a new line
  * @separator: The string to be printed between strings
- * @n: The number passed to the function.
+ * @n: The number of strings passed to the function.
  * @...: A variable number of strings to be printed.
  *
  * Description: If separator is NULL, it is not printed.
@@ -18,7 +18,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int index;
 
 	va_start(strings, n);
-
 	for(index = 0; index < n; index++)
 	{
 		str = va_arg(strings, char *);
